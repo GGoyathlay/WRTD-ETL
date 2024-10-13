@@ -1,0 +1,16 @@
+# Используем официальный образ PostgreSQL
+FROM postgres:15
+
+# Устанавливаем переменные окружения для инициализации базы данных
+ENV POSTGRES_USER=<user>
+ENV POSTGRES_PASSWORD=<password>
+ENV POSTGRES_DB=wrtd_db
+
+# Копируем инициализационные скрипты (если есть)
+# COPY init.sql /docker-entrypoint-initdb.d/
+
+# Указываем том для хранения данных
+VOLUME ["/var/lib/postgresql/data"]
+
+# Порт, который будет использоваться
+EXPOSE 5432

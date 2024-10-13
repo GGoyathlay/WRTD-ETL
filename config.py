@@ -1,0 +1,5 @@
+host = "localhost"
+user = "<user>"
+password = "<password>"
+db_name = "wrtd_db"
+port = "5432"
